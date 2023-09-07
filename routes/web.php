@@ -22,16 +22,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
-    if(Auth::check()){
+    if (Auth::check()) {
         return view('admin.index');
         //return view('portal.index');
+    } else {
+        // return view('auth.login');
+        return view('landing');
     }
-    else{
-        return view('auth.login');
-    }
-     
 });
- 
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/billboard', [App\Http\Controllers\BillboardController::class, 'index'])->name('billboard');
