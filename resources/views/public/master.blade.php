@@ -48,14 +48,14 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#beranda">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#layanan">Layanan</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                     <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto " href="#kontak">Kontak</a></li>
+                    <li><a class="nav-link scrollto " href="#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="#about" class="get-started-btn scrollto">Masuk</a>
+            <a href="/login" class="get-started-btn scrollto">Masuk</a>
         </div>
     </header><!-- End Header -->
 
@@ -65,9 +65,9 @@
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row">
                 <div class="col-xl-6">
-                    <h1>Bettter digital experience with Presento</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                    <h1>Kami hadir untuk memberikan yang terbaik</h1>
+                    <h2>Jaringan media periklanan tersebar di seluruh pulau Jawa</h2>
+                    <a href="#about" class="btn-get-started scrollto">Lihat Portofolio</a>
                 </div>
             </div>
         </div>
@@ -85,18 +85,25 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
+                    <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>Sarana Media Advertising<span>.</span></h3>
                         <p>
                             A108 Adam Street <br>
                             New York, NY 535022<br>
-                            United States <br><br>
+                            United States
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        {{-- <h3>Sarana Media Advertising<span>.</span></h3> --}}
+                        <br /><br />
+                        <p>
                             <strong>Phone:</strong> +1 5589 55488 55<br>
                             <strong>Email:</strong> info@example.com<br>
                         </p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
+                    {{-- <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -105,15 +112,7 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
@@ -123,17 +122,17 @@
 
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>Presento</span></strong>. All Rights Reserved
+                    &copy; Copyright <strong><span>Sarana Media Adv</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    Designed by <a href="#">GH</a>
                 </div>
             </div>
             <div class="social-links text-center text-md-end pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                {{-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> --}}
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                {{-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> --}}
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
