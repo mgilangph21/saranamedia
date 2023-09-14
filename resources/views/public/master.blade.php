@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Presento Bootstrap Template - Index</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>Sarana Media Advertising</title>
+    <meta content="Mitra periklanan nomor satu di pulau Jawa" name="description">
+    <meta content="Sarana Media Billboard" name="keywords">
 
     <!-- Favicons -->
     <link href="{{ asset('/landing/assets/img/favicon.png') }}" rel="icon">
@@ -41,7 +41,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a href="index.html">Sarana Media<span>.</span></a></h1>
+            <h1 class="logo me-auto"><a href="/">Sarana Media<span>.</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
@@ -67,7 +67,7 @@
                 <div class="col-xl-6">
                     <h1>Kami hadir untuk memberikan yang terbaik</h1>
                     <h2>Jaringan media periklanan tersebar di seluruh pulau Jawa</h2>
-                    <a href="#about" class="btn-get-started scrollto">Lihat Portofolio</a>
+                    <a href="#portofolio" class="btn-get-started scrollto">Lihat Portofolio</a>
                 </div>
             </div>
         </div>
@@ -80,49 +80,29 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-
+        {{-- 
         <div class="footer-top">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-4 col-md-6 footer-contact">
-                        <h3>Sarana Media Advertising<span>.</span></h3>
+                        <h3>CV. Sarana Media Promosi<span>.</span></h3>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States
+                            Park Royal Regency <br>
+                            Blok S2 No. 8 Buduran<br>
+                            Sidoarjo - Jawa Timur
                         </p>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        {{-- <h3>Sarana Media Advertising<span>.</span></h3> --}}
-                        <br /><br />
-                        <p>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
-
-                    {{-- <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div> --}}
 
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="container d-md-flex py-4">
 
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>Sarana Media Adv</span></strong>. All Rights Reserved
+                    &copy; Copyright <strong><span>CV. Sarana Media Promosi</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
                     Designed by <a href="#">GH</a>
@@ -130,10 +110,11 @@
             </div>
             <div class="social-links text-center text-md-end pt-3 pt-md-0">
                 {{-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> --}}
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                {{-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> --}}
+                <a href="https://instagram.com/saranamedia.surabaya" class="instagram"><i
+                        class="bx bxl-instagram"></i></a>
                 {{-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> --}}
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                {{-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> --}}
             </div>
         </div>
     </footer><!-- End Footer -->
@@ -152,6 +133,8 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('/landing/assets/js/main.js') }}"></script>
+
+    @stack('js')
 
 </body>
 

@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Billboard;
+use App\Models\Jpo;
+use App\Models\Led;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +29,17 @@ Route::get('/', function () {
         return view('admin.index');
         //return view('portal.index');
     } else {
-        // return view('auth.login');
-        return view('landing');
+
+        $bill = Billboard::all();
+        $jpo = Jpo::all();
+        $led = Led::all();
+        $data = [
+            'bill' => $bill,
+            'jpo' => $jpo,
+            'led' => $led
+        ];
+
+        return view('landing', compact('data'));
     }
 });
 
