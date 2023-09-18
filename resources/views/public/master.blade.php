@@ -59,21 +59,6 @@
         </div>
     </header><!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <div class="row">
-                <div class="col-xl-6">
-                    <h1>Kami hadir untuk memberikan yang terbaik</h1>
-                    <h2>Jaringan media periklanan tersebar di seluruh pulau Jawa</h2>
-                    <a href="#portofolio" class="btn-get-started scrollto">Lihat Portofolio</a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
     <main id="main">
         @yield('content')
     </main>

@@ -5,17 +5,6 @@ use App\Models\Jpo;
 use App\Models\Led;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -42,6 +31,22 @@ Route::get('/', function () {
         return view('landing', compact('data'));
     }
 });
+Route::get('/detil/{type}/{id}', function($type, $id){    
+    switch($type){
+        case 'jpo':
+            $d = Jpo::findOrFail($id);
+            break;
+        case 'led':
+            $d = Led::findOrFail($id);
+            break;
+        case 'billboard':
+            $d = Billboard::findOrFail($id);
+            break;
+    }  
+    return view('detil', compact('d'));
+})->name('detil');
+Route::post('/kirim/email', [App\Http\Controllers\publicController::class, 'sendEmail'])->name('sendEmail');
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
