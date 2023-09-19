@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     if (Auth::check()) {
         return view('admin.index');
-        //return view('portal.index');
     } else {
-
         $bill = Billboard::all();
         $jpo = Jpo::all();
         $led = Led::all();

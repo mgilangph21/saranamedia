@@ -45,6 +45,7 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
+            {{-- {{ parse_url($_SERVER['REQUEST_URI']) }} --}}
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#beranda">Beranda</a></li>
@@ -53,7 +54,7 @@
                     <li><a class="nav-link scrollto " href="#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            </nav>
 
             <a href="/login" class="get-started-btn scrollto">Masuk</a>
         </div>

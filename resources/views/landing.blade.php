@@ -269,7 +269,7 @@
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="col-lg-6">
+                <div class="col-lg-12">
 
                     <div class="row">
                         <div class="col-md-12">
@@ -290,15 +290,16 @@
                             <div class="info-box mt-4">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Telp./WhatsApp</h3>
-                                <p>+62 81 331 332 061 <br>+62 82 230 402 115</p>
+                                <p>+62 81 331 332 061 / +62 82 230 402 115</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="col-lg-6">
+                {{-- <div class="col-lg-6">
                     <form action="{{ route('sendEmail') }}" method="post" role="form" class="php-email-form">
+                        @csrf
                         <div class="row">
                             <div class="col form-group">
                                 <input type="text" name="nama" class="form-control" id="name"
@@ -323,7 +324,7 @@
                         </div>
                         <div class="text-center"><button type="submit">Kirim Pesan</button></div>
                     </form>
-                </div>
+                </div> --}}
 
             </div>
 
