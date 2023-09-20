@@ -81,7 +81,7 @@
                                 <div class="col-md-8">
                                     <label class="small text-muted">Unggah gambar pada bagian di bawah ini untuk mengganti
                                         gambar.</label>
-                                    <input type="file" class="file" id="gambarBiilboard" name="ugambar" required
+                                    <input type="file" class="file" id="gambarBiilboard" name="ugambar"
                                         data-browse-on-zone-click="true" data-show-upload="false">
                                 </div>
                             </div>

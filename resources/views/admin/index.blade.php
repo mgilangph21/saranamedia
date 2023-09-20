@@ -87,9 +87,10 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($sum['data'] as $b)
+                                        @php $r = App\Http\Controllers\publicController::getRoute($b->tipe, $b->id);  @endphp
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('editBillboard', $b->id) }}">{{ $b->nama }}</a>
+                                            <td><a href="{{ $r }}">{{ $b->nama }}</a>
                                             </td>
                                             <td>{{ $b->lokasi }}</td>
                                             <td><img src="{{ asset('storage/' . $b->gambar) }}" class="img-thumbnail"
@@ -99,13 +100,11 @@
                                                 <span
                                                     class="badge rounded-pill bg-{{ $b->status == 'Y' ? 'success' : 'secondary' }}">{{ $b->status == 'Y' ? 'Tersedia' : 'Tidak Tersedia' }}</span>
                                             </td>
-                                            <td>{{ $b->tipe }}</td>
+                                            <td><span class="text-uppercase">{{ $b->tipe }}</span></td>
                                             <td>
-                                                <button class="btn btn-sm btn-danger" id="btnHapus" type="button"
-                                                    data-toggle="modal" data-target="#modalHapus"
-                                                    data-hapus="{{ $b->id }}" data-nama="{{ $b->nama }}">
-                                                    Hapus
-                                                </button>
+                                                <a class="btn btn-sm btn-info" href="{{ $r }}">
+                                                    Lihat
+                                                </a>
                                             </td>
                                         </tr>
                                     @empty

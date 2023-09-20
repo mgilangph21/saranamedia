@@ -937,7 +937,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright © 2022 | Sarana Media Advertising</div>
+                        <div class="text-muted">Copyright © 2023 | Sarana Media Promosi</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             ·

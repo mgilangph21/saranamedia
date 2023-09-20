@@ -19,6 +19,21 @@ class publicController extends Controller
         $headers .= "Reply-To: ". $r->email;
         mail($to,$email_subject,$email_body,$headers);
 
-        return "ok"
+        return "ok";
+    }
+
+    public function getRoute($a, $id){
+        switch($a){
+            case 'bill':
+                $route = route('editBillboard', $id);
+            break;
+            case 'led':
+                $route = route('editLed', $id);
+            break;
+            case 'jpo':
+                $route = route('editJpo', $id);
+            break;
+        }
+        return $route;
     }
 }

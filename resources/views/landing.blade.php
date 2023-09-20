@@ -290,7 +290,11 @@
                             <div class="info-box mt-4">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Telp./WhatsApp</h3>
-                                <p>+62 81 331 332 061 / +62 82 230 402 115</p>
+                                <p><a
+                                        href="https://wa.me/+6281331332061?text=Saya%20tertarik%20ingin%20menggunakan%20salah%20satu%20produk%20Anda">+6281331332061</a>
+                                    / <a
+                                        href="https://wa.me/+6282230402115?text=Saya%20tertarik%20ingin%20menggunakan%20salah%20satu%20produk%20Anda">+6282230402115</a>
+                                </p>
                             </div>
                         </div>
                     </div>

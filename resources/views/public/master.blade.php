@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Sarana Media Advertising</title>
+    <title>Sarana Media Promosi</title>
     <meta content="Mitra periklanan nomor satu di pulau Jawa" name="description">
-    <meta content="Sarana Media Billboard" name="keywords">
+    <meta content="Sarana Media Promosi" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('/landing/assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('/landing/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('/landing/assets/img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('/landing/assets/img/favicon.ico') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -29,11 +29,6 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('/landing/assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
