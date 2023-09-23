@@ -51,7 +51,12 @@
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
 
-            <a href="/login" class="get-started-btn scrollto">Masuk</a>
+            @if (Auth::check())
+                <a href="{{ route('home') }}" class="btn btn-warning" style="margin-left: 30px;">Halo,
+                    {{ auth()->user()->name }}!</a>
+            @else
+                <a href="/login" class="get-started-btn scrollto">Masuk</a>
+            @endif
         </div>
     </header><!-- End Header -->
 
@@ -86,7 +91,7 @@
                     &copy; Copyright <strong><span>CV. Sarana Media Promosi</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
-                    Designed by <a href="#">GH</a>
+                    Organized by <a href="#">GH</a>
                 </div>
             </div>
             <div class="social-links text-center text-md-end pt-3 pt-md-0">

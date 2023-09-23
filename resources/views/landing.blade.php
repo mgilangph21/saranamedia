@@ -43,8 +43,8 @@
 
             <div class="section-title">
                 <h2>Layanan</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p> --}}
             </div>
 
             <div class="row">
@@ -343,4 +343,4 @@
     <script>
         new DataTable('#tableBill, #tableLed, #tableJpo');
     </script>
-@endpush()
+@endpush

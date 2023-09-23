@@ -5,30 +5,26 @@ use App\Models\Jpo;
 use App\Models\Led;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', function () {
-    if (Auth::check()) {
-        return view('admin.index');
-    } else {
-        $bill = Billboard::all();
-        $jpo = Jpo::all();
-        $led = Led::all();
-        $data = [
-            'bill' => $bill,
-            'jpo' => $jpo,
-            'led' => $led
-        ];
+    // if (Auth::check()) {
+    //     return view('admin.index');
+    // } else {
+        
+    // }
 
-        return view('landing', compact('data'));
-    }
+    $bill = Billboard::all();
+    $jpo = Jpo::all();
+    $led = Led::all();
+    $data = [
+        'bill' => $bill,
+        'jpo' => $jpo,
+        'led' => $led
+    ];
+
+    return view('landing', compact('data'));
 });
+
 Route::get('/detil/{type}/{id}', function($type, $id){    
     switch($type){
         case 'jpo':
@@ -46,7 +42,12 @@ Route::get('/detil/{type}/{id}', function($type, $id){
 Route::post('/kirim/email', [App\Http\Controllers\publicController::class, 'sendEmail'])->name('sendEmail');
 
 
-Auth::routes();
+// Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/billboard', [App\Http\Controllers\BillboardController::class, 'index'])->name('billboard');
 Route::get('/billboard/detil/{id}', [App\Http\Controllers\BillboardController::class, 'edit'])->name('editBillboard');

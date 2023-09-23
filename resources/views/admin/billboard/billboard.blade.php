@@ -110,23 +110,14 @@
                             <textarea class="form-control" name="keteranganBillboard" id="keteranganBillboard"></textarea>
                         </div>
 
-                        <fieldset class="form-group row mb-2">
-                            <legend class="col-form-label col-sm-2 float-sm-left pt-0 font-weight-bold">Status</legend>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="tersedia"
-                                        value="Y">
-                                    <label class="form-check-label" for="tersedia">
-                                        Tersedia
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="noTersedia"
-                                        value="N">
-                                    <label class="form-check-label" for="noTersedia">
-                                        Tidak Tersedia
-                                    </label>
-                                </div>
+                        <fieldset class="form-group mb-2">
+                            <legend class="col-form-label float-sm-left pt-0 font-weight-bold">Status</legend>
+                            <div class="">
+                                <select class="form-control" id="status" name="status" required>
+                                    <option value="">--- Pilih Status</option>
+                                    <option value="Y">Tersedia</option>
+                                    <option value="N">Tidak Tersedia</option>
+                                </select>
                             </div>
                         </fieldset>
 
