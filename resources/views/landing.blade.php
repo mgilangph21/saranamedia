@@ -268,7 +268,7 @@
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                @foreach ($data['proyek'] as $p)
+                @forelse ($data['proyek'] as $p)
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
                             <img src="{{ asset('storage/' . $p->gambar) }}" class="img-fluid" alt="">
@@ -284,7 +284,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center">
+                        <p class="small font-style-italic text-danger">--- belum tersedia data proyek</p>
+                    </div>
+                @endforelse
             </div>
             <div class="text-center">
                 {{ $data['proyek']->links() }}
