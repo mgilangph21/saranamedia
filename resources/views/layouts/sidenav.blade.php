@@ -54,6 +54,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-chalkboard"></i></div>
                         LED
                     </a>
+                    <a class="nav-link" href="{{ route('proyek') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-project-diagram"></i></div>
+                        Proyek
+                    </a>
                 </div>
             </div>
             @if (Auth::check())

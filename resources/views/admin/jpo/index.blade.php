@@ -19,12 +19,17 @@
                         Daftar JPO
                     </div>
                     <div class="card-body">
-                        <button type="button" class="btn btn-sm btn-primary mb-3" data-toggle="modal"
-                            data-target="#modalAddBillboard">
-                            Tambah JPO
-                        </button>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-sm btn-primary mb-3" data-toggle="modal"
+                                data-target="#modalAddBillboard">
+                                Tambah JPO
+                            </button>
+                            <div class="small">
+                                total data JPO <b>{{ $count }}</b>
+                            </div>
+                        </div>
                         <div class="table-responsive">
-                            <table class="table" id="datatablesSimple">
+                            <table class="table" id="">
                                 <thead class="thead-light">
                                     <tr>
                                         <th scope="col">#</th>

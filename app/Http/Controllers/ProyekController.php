@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jpo;
+use App\Models\Proyek;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
-class JpoController extends Controller
+class ProyekController extends Controller
 {
+    //
     public function __construct()
     {
         $this->middleware('auth');
@@ -16,25 +17,18 @@ class JpoController extends Controller
 
     public function index()
     {
-        $data = Jpo::cursorPaginate(10);
-        $count = count(Jpo::all());
+        $data = Proyek::cursorPaginate(10);
+        $count = count(Proyek::all());
 
         $response = Http::get('https://www.emsifa.com/api-wilayah-indonesia/api/regencies/35.json');
         $kota = $response->json();
 
-        return view('admin.jpo.index', compact([
+        return view('admin.proyek.index', compact([
             'data',
             'kota',
             'count'
         ]));
     }
-
-
-    public function create()
-    {
-        //
-    }
-
 
     public function store(Request $request)
     {
@@ -42,41 +36,33 @@ class JpoController extends Controller
             $filename = $request->file('gambar')->store('gbr', 'public'); // disimpan di folder gbr di dalam /storage/app/public
         }
 
-        $data = new Jpo([
+        $data = new Proyek([
             'nama' => $request->nama,
             'lokasi' => $request->lokasi,
-            'detil' => $request->keteranganJpo,
-            'status' => $request->status,
             'gambar' => $filename
         ]);
         $data->save();
 
-        return back()->with('success', 'Data Jpo baru berhasil ditambahkan');
+        return back()->with('success', 'Data Proyek baru berhasil ditambahkan');
     }
 
-
-    public function show($id)
+    public function destroy(Request $request)
     {
-        //
+        $data = Proyek::findOrFail($request->haid);
+
+        if (Storage::exists('public/' . $data->gambar)) {
+            Storage::delete('public/' . $data->gambar);
+            $name = $data->nama;
+            $data->delete();
+            return back()->with('warning', 'Data Proyek ' . $name . ' berhasil dihapus.');
+        } else {
+            return back()->with('error', 'Tidak dapat hapus data Proyek, file gambar tidak tersedia!');
+        }
     }
-
-
-    public function edit($id)
-    {
-        $data = Jpo::findOrFail($id);
-        $response = Http::get('https://www.emsifa.com/api-wilayah-indonesia/api/regencies/35.json');
-        $kota = $response->json();
-
-        return view('admin.jpo.edit', compact([
-            'data',
-            'kota'
-        ]));
-    }
-
 
     public function update(Request $request)
     {
-        $data = Jpo::findOrFail($request->uid);
+        $data = Proyek::findOrFail($request->uid);
         if ($request->hasFile('ugambar')) {
             if (Storage::exists('public/' . $data->gambar)) {
                 Storage::delete('public/' . $data->gambar); // hapus file gambar lama
@@ -90,26 +76,9 @@ class JpoController extends Controller
         $data->update([
             'nama' => $request->unama,
             'lokasi' => $request->lokasi,
-            'detil' => $request->uketerangan,
-            'status' => $request->ustatus,
             'gambar' => $filename
         ]);
 
-        return back()->with('success', 'Data Jpo ' . $request->unama . ' berhasil diperbarui.');
-    }
-
-
-    public function destroy(Request $request)
-    {
-        $data = Jpo::findOrFail($request->haid);
-
-        if (Storage::exists('public/' . $data->gambar)) {
-            Storage::delete('public/' . $data->gambar);
-            $name = $data->nama;
-            $data->delete();
-            return back()->with('warning', 'Data Jpo ' . $name . ' berhasil dihapus.');
-        } else {
-            return back()->with('error', 'Tidak dapat hapus data Jpo, file gambar tidak tersedia!');
-        }
+        return back()->with('success', 'Data Led ' . $request->unama . ' berhasil diperbarui.');
     }
 }

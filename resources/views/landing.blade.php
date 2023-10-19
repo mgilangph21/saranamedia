@@ -147,7 +147,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama/Lokasi</th>
-                                    <th scope="col">Gambar</th>
+                                    {{-- <th scope="col">Gambar</th> --}}
                                     <th scope="col">Status</th>
                                     <th scope="col">Detil</th>
                                 </tr>
@@ -160,7 +160,7 @@
                                             <span class="fw-bold text-primary">{{ $b->nama }}</span> <br />
                                             {{ $b->lokasi }}
                                         </td>
-                                        <td><img src="{{ asset('storage/' . $b->gambar) }}" width="200px"></td>
+                                        {{-- <td><img src="{{ asset('storage/' . $b->gambar) }}" width="200px"></td> --}}
                                         <td>
                                             <span
                                                 class="badge rounded-pill text-bg-{{ $b->status == 'Y' ? 'success' : 'warning' }}">{{ $b->status == 'Y' ? 'Tersedia' : 'Tidak Tersedia' }}</span>
@@ -223,7 +223,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama/Lokasi</th>
-                                    <th scope="col">Gambar</th>
+                                    {{-- <th scope="col">Gambar</th> --}}
                                     <th scope="col">Status</th>
                                     <th scope="col">Detil</th>
                                 </tr>
@@ -236,7 +236,7 @@
                                             <span class="fw-bold text-primary">{{ $b->nama }}</span> <br />
                                             {{ $b->lokasi }}
                                         </td>
-                                        <td><img src="{{ asset('storage/' . $b->gambar) }}" width="200px"></td>
+                                        {{-- <td><img src="{{ asset('storage/' . $b->gambar) }}" width="200px"></td> --}}
                                         <td>
                                             <span
                                                 class="badge rounded-pill text-bg-{{ $b->status == 'Y' ? 'success' : 'warning' }}">{{ $b->status == 'Y' ? 'Tersedia' : 'Tidak Tersedia' }}</span>
@@ -254,6 +254,42 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- on going projects --}}
+    <section id="proyek" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Proyek</h2>
+                <p>Gambar di bawah ini merupakan daftar proyek yang saat ini sedang berlangsung dengan asistensi dari kami.
+                </p>
+            </div>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach ($data['proyek'] as $p)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('storage/' . $p->gambar) }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>{{ $p->nama }}</h4>
+                                <p>{{ $p->lokasi }}</p>
+                                <div class="portfolio-links">
+                                    <a href="{{ asset('storage/' . $p->gambar) }}" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox" title="{{ $p->nama . ' - ' . $p->lokasi }}">
+                                        <i class='bx bxl-trip-advisor'></i></a>
+                                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="text-center">
+                {{ $data['proyek']->links() }}
+            </div>
+
         </div>
     </section>
 

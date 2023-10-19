@@ -13,17 +13,19 @@ class LedController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        $data = Led::all(); 
+        $data = Led::cursorPaginate(10);
+        $count = count(Led::all());
 
         $response = Http::get('https://www.emsifa.com/api-wilayah-indonesia/api/regencies/35.json');
         $kota = $response->json();
-        
+
         return view('admin.led.index', compact([
             'data',
-            'kota'
+            'kota',
+            'count'
         ]));
     }
 
@@ -36,7 +38,7 @@ class LedController extends Controller
 
     public function store(Request $request)
     {
-        if ($request->hasFile('gambar')){
+        if ($request->hasFile('gambar')) {
             $filename = $request->file('gambar')->store('gbr', 'public'); // disimpan di folder gbr di dalam /storage/app/public
         }
 
@@ -74,9 +76,9 @@ class LedController extends Controller
 
     public function update(Request $request)
     {
-        $data = Led::findOrFail($request->uid);        
-        if ($request->hasFile('ugambar')){
-            if(Storage::exists('public/' . $data->gambar)){ 
+        $data = Led::findOrFail($request->uid);
+        if ($request->hasFile('ugambar')) {
+            if (Storage::exists('public/' . $data->gambar)) {
                 Storage::delete('public/' . $data->gambar); // hapus file gambar lama
             }
             // upload file gambar baru
@@ -101,13 +103,13 @@ class LedController extends Controller
     {
         $data = Led::findOrFail($request->haid);
 
-        if(Storage::exists('public/' . $data->gambar)){
+        if (Storage::exists('public/' . $data->gambar)) {
             Storage::delete('public/' . $data->gambar);
             $name = $data->nama;
             $data->delete();
-            return back()->with('warning','Data Led '. $name . ' berhasil dihapus.');
+            return back()->with('warning', 'Data Led ' . $name . ' berhasil dihapus.');
         } else {
             return back()->with('error', 'Tidak dapat hapus data Led, file gambar tidak tersedia!');
-        }   
+        }
     }
 }

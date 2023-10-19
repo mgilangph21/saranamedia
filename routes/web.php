@@ -3,6 +3,7 @@
 use App\Models\Billboard;
 use App\Models\Jpo;
 use App\Models\Led;
+use App\Models\Proyek;
 use Illuminate\Support\Facades\Route;
 
 
@@ -10,23 +11,25 @@ Route::get('/', function () {
     // if (Auth::check()) {
     //     return view('admin.index');
     // } else {
-        
+
     // }
 
     $bill = Billboard::all();
     $jpo = Jpo::all();
     $led = Led::all();
+    $pro = Proyek::cursorPaginate(9);
     $data = [
         'bill' => $bill,
         'jpo' => $jpo,
-        'led' => $led
+        'led' => $led,
+        'proyek' => $pro
     ];
 
     return view('landing', compact('data'));
 });
 
-Route::get('/detil/{type}/{id}', function($type, $id){    
-    switch($type){
+Route::get('/detil/{type}/{id}', function ($type, $id) {
+    switch ($type) {
         case 'jpo':
             $d = Jpo::findOrFail($id);
             break;
@@ -36,7 +39,7 @@ Route::get('/detil/{type}/{id}', function($type, $id){
         case 'billboard':
             $d = Billboard::findOrFail($id);
             break;
-    }  
+    }
     return view('detil', compact('d'));
 })->name('detil');
 Route::post('/kirim/email', [App\Http\Controllers\publicController::class, 'sendEmail'])->name('sendEmail');
@@ -66,5 +69,10 @@ Route::get('/led/detil/{id}', [App\Http\Controllers\LedController::class, 'edit'
 Route::post('/led/store', [App\Http\Controllers\LedController::class, 'store'])->name('addLed');
 Route::post('/led/update', [App\Http\Controllers\LedController::class, 'update'])->name('updateLed');
 Route::post('/led/delete', [App\Http\Controllers\LedController::class, 'destroy'])->name('deleteLed');
+
+Route::get('/proyek', [App\Http\Controllers\ProyekController::class, 'index'])->name('proyek');
+Route::post('/proyek/store', [App\Http\Controllers\ProyekController::class, 'store'])->name('addProyek');
+Route::post('/proyek/update', [App\Http\Controllers\ProyekController::class, 'update'])->name('updateProyek');
+Route::post('/proyek/delete', [App\Http\Controllers\ProyekController::class, 'destroy'])->name('deleteProyek');
 
 Route::post('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
